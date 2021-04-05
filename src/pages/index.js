@@ -3,7 +3,7 @@ import React from "react";
 import Home from "../Home";
 import Hospitals from "../Hospitals";
 // import Certificate from "../Certificate";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { StaticRouter as Router, Switch, Route } from "react-router-dom";
 import Siddhivinayak from "../Siddhivinayak";
 import Vaidya from "../Vaidya";
 import Shwaas from "../shwaas";
@@ -24,8 +24,6 @@ function initializeAnalytics(){
   ReactGA.initialize("G-VY6V29MQZJ")
   ReactGA.pageview(window.location.pathname + window.location.search);
 }
-console.log(process.env);
-console.log(process.env.REACT_APP_GOOGLE_CLIENT_EMAIL);
 function App() {
   initializeAnalytics();
   return (
