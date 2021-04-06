@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "gatsby";
 import "./Siddhivinayak.css";
 
 function Siddhivinayak() {
@@ -19,7 +19,7 @@ function Siddhivinayak() {
           src="https://calendly.com/dose-booking/siddhivinayak-hospital-vaccine-appointment-clone?embed_domain=siddhivinayak-appointment.dosebooking.com&amp;embed_type=Inline&amp;hide_gdpr_banner=1"
           width="100%"
           height="100%"
-          frameborder="0"
+          frameBorder="0"
         ></iframe>
       </div>
     </div>

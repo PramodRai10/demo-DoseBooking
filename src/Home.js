@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import { Link } from "react-router-dom";
+import { Link } from "gatsby";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 
 function Home() {

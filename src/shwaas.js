@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "gatsby";
 import "./shwaas.css";
 
 function Isha() {
@@ -19,7 +19,7 @@ function Isha() {
           src="https://calendly.com/dose-booking/shwaas-hospital-vaccine-appointment?hide_gdpr_banner=1"
           width="100%"
           height="100%"
-          frameborder="0"
+          frameBorder="0"
         ></iframe>
       </div>
     </div>

@@ -1,6 +1,6 @@
 // import React, { useState } from "react";
 // import "./Certificate.css";
-// import { Link } from "react-router-dom";
+// import { Link } from "gatsby";
 // import FormDetails from "./FormDetails";
 // import Thanks from "./Thanks";
 
