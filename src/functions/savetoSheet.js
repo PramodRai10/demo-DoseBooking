@@ -9,23 +9,25 @@ const { GoogleSpreadsheet } = require('google-spreadsheet');
       try {
         const doc = new GoogleSpreadsheet(SPREADSHEET_ID)
         await doc.useServiceAccountAuth({
-                client_email: CLIENT_EMAIL,
-               private_key: PRIVATE_KEY.replace(/\\n/g, '\n'),
+              client_email: CLIENT_EMAIL,
+              private_key: PRIVATE_KEY.replace(/\\n/g, '\n'),
             });
         await doc.loadInfo();
         const sheet = doc.sheetsByIndex[SHEET_ID];
         const data =JSON.parse(event.body)
-        await sheet.addRow(row);
-        return {
-          statusCode: 200,
+        await sheet.addRow(data);
+        callback(null, {
+          // return null to show no errors
+          statusCode: 200, // http status code
           body: JSON.stringify({
             message: `row added`,
           }),
-        }
+        });
       } catch (e) {
-        return {
-          statusCode: 500,
+        callback(null, {
+          // return null to show no errors
+          statusCode: 500, // http status code
           body: e.toString(),
-        }
+        });
       }
     }

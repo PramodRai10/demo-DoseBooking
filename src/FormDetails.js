@@ -54,9 +54,9 @@ function FormDetails(props) {
     // appendSpreadsheet(newRow);
 
     //Making POST Request
-    axios.post('/.netlify/functions/savetoSheet', newRow)
+    axios.post('/.netlify/functions/savetoSheet', JSON.stringify(newRow), {headers:{"Content-Type" : "application/json"}})
       .then((response) => {
-        console.log(response);
+        console.log('Successfully Added Row');
         setData({ ...data, Name: '', Email: '', DOB: '1940', AadharId: null, Phone: '', Vaccination_hospital: 'Starcity Hospital', Vaccination_date: '' });
         props.hideFn(true);
       }, (error) => {
