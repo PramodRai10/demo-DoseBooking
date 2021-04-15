@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "gatsby";
 import "./shwaas.css";
+import SiteTytle from "./siteTitle";
 
 function Isha() {
   return (
     <div className="isha">
+    <SiteTytle />
       <div className="ishaTop">
         <Link to="/" className="ishaTop">
           <h1>

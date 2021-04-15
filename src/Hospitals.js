@@ -1,10 +1,12 @@
 import React from "react";
 import "./Hospitals.css";
 import { Link } from "gatsby";
+import SiteTytle from "./siteTitle";
 
 function Hospitals() {
   return (
     <div className="hospitals">
+      <SiteTytle />
       <div className="hospitalsTop">
         <Link to="/" className="hospitalsTop">
           <h1>

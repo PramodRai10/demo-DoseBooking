@@ -1,10 +1,13 @@
 import React from "react";
 import "./Vaidya.css";
+import SiteTytle from "./siteTitle";
+
 import { Link } from "gatsby";
 
 function Vaidya() {
   return (
     <div className="vaidya">
+      <SiteTytle />
       <div className="vaidyaTop">
         <Link to="/" className="vaidyaTop">
           <h1>

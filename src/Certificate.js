@@ -3,15 +3,21 @@ import "./Certificate.css";
 import { Link } from "gatsby";
 import FormDetails from "./FormDetails";
 import Thanks from "./Thanks";
+import SiteTytle from "./siteTitle";
+import Spinner from './SpinnerPage';
 
 function Certificate() {
   const [temp, setTemp] = useState(false);
-  function hideFn(flag){
-    setTemp(flag);
+  const [flag, setFlag] = useState(false);
+
+  function hideFn(fl, x){
+    setTemp(fl);
+    setFlag(x);
   }
-  
+
   return (
     <div className="certificate">
+      <SiteTytle />
       <div className="certificateTop">
         <Link to="/" className="certificateTop">
           <h1>
@@ -22,6 +28,7 @@ function Certificate() {
       </div>
       <div className="certificateBottom">
         {!temp && <FormDetails hideFn={hideFn} />}
+        {flag && <Spinner hideFn={hideFn} /> }
         {temp && <Thanks hideFn={hideFn} />}
       </div>
     </div>

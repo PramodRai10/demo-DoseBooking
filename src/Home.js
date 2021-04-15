@@ -2,11 +2,13 @@ import React from "react";
 import "./Home.css";
 import { Link } from "gatsby";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
+import SiteTytle from "./siteTitle";
 
 function Home() {
 
   return (
     <div className="home">
+      <SiteTytle />
       <div className="homeTop">
         <h1>
           <div className="logo"></div>

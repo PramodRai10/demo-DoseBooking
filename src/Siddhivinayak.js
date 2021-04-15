@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "gatsby";
 import "./Siddhivinayak.css";
+import SiteTytle from "./siteTitle";
 
 function Siddhivinayak() {
   return (
     <div className="siddhivinayak">
+    <SiteTytle />
       <div className="siddhivinayakTop">
         <Link to="/" className="siddhivinayakTop">
           <h1>

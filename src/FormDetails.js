@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
-// import { GoogleSpreadsheet } from "google-spreadsheet";
 import "./FormDetails.css";
 import axios from 'axios';
 
 function FormDetails(props) {
-  // Config variables
-
-//   const SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
-//   const SHEET_ID = process.env.REACT_APP_SHEET_ID;
-//   const CLIENT_EMAIL = process.env.REACT_APP_GOOGLE_CLIENT_EMAIL;
-//   const PRIVATE_KEY = process.env.REACT_APP_GOOGLE_SERVICE_PRIVATE_KEY;
 
   const [data, setData] = useState({
     Name: '',
@@ -21,27 +14,6 @@ function FormDetails(props) {
     Vaccination_date: ''
   })
 
-//   const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
-
-//   const appendSpreadsheet = async (row) => {
-//     try {
-//       await doc.useServiceAccountAuth({
-//         client_email: CLIENT_EMAIL,
-//         private_key: PRIVATE_KEY.replace(/\\n/g, '\n'),
-//       });
-//       // loads document properties and worksheets
-//       await doc.loadInfo();
-
-//       const sheet = doc.sheetsById[SHEET_ID];
-//       await sheet.addRow(row);
-//       setData({ ...data, Name: '', Email: '', DOB: '1940', AadharId: null, Phone: '', Vaccination_hospital: 'Starcity Hospital', Vaccination_date: '' });
-//       props.hideFn(true);
-
-//     } catch (e) {
-//       console.error('Error: ', e);
-//     }
-//   };
-
   const { Name, Email, DOB, AadharId, Phone, Vaccination_hospital, Vaccination_date } = data;
 
   const handleChange = (e) => {
@@ -51,14 +23,15 @@ function FormDetails(props) {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     const newRow = { Name, Email, DOB, AadharId, Phone, Vaccination_hospital, Vaccination_date };
-    // appendSpreadsheet(newRow);
+    props.hideFn(false, true);
 
     //Making POST Request
     axios.post('/.netlify/functions/savetoSheet', JSON.stringify(newRow), {headers:{"Content-Type" : "application/json"}})
       .then((response) => {
         console.log('Successfully Added Row');
         setData({ ...data, Name: '', Email: '', DOB: '1940', AadharId: null, Phone: '', Vaccination_hospital: 'Starcity Hospital', Vaccination_date: '' });
-        props.hideFn(true);
+        props.hideFn(true, false);
+        // props.hideFn(true);
       }, (error) => {
         console.log(error);
       });
