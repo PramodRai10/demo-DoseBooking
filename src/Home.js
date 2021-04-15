@@ -80,7 +80,7 @@ function Home() {
         </div>
       </div>
       <div className="youtube">
-        <h1>Video tutorial</h1>
+        <h1 style={{marginBottom: '2%'}}>Video Tutorial</h1>
         <hr />
         <iframe
           title="video-Tutorial"

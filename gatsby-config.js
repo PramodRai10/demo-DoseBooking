@@ -1,7 +1,20 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
+const { createProxyMiddleware } = require("http-proxy-middleware");
+
 module.exports = {
+  developMiddleware: app => {
+    app.use(
+      "/.netlify/functions/",
+      createProxyMiddleware({
+        target: "http://localhost:9000",
+        pathRewrite: {
+          "/.netlify/functions/": "",
+        },
+      })
+    )
+  },
   siteMetadata: {
     title: `DodeBooking.com`,
     description: `This is a vaccination booking portal where you can book appointments for Vaccination. Three easy steps to get yourself vaccinated “Book It, Attend it, Get vaccinated”.`,

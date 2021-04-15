@@ -2,7 +2,7 @@ import "./index.css";
 import React from "react";
 import Home from "../Home";
 import Hospitals from "../Hospitals";
-// import Certificate from "../Certificate";
+import Certificate from "../Certificate";
 
 import { Router } from "@reach/router"
 import Siddhivinayak from "../Siddhivinayak";
@@ -23,7 +23,7 @@ function App() {
     <div className="app">
       <Router>
 
-        {/* <Certificate path="/certificate" /> */}
+        <Certificate path="/certificate" />
 
         <Shwaas path="/shwaas" />
 
